@@ -1,0 +1,144 @@
+---
+title: "2022 R Refresher Workshop"
+author: "Elizabeth O. Davis"
+format:
+  revealjs: 
+    theme: [default, slides-style.scss]
+    logo: SDZWA_Seal_CMYK.jpg
+    incremental: true
+    slide-number: true
+    show-slide-number: all
+editor: visual
+---
+
+## Prep for Using R
+
+-   Các bạn đã tải xuống R chưa?
+-   Các bạn đã tải xuống R Studio chưa?
+
+## 
+
+![](rstudio.png)
+
+## Installing packages
+
+-   Easily done with `install.packages("tidyverse")`
+-   Sometimes packages need to be installed via an external site called *GitHub*.
+-   `devtools::install_github("tidyverse/ggplot2")`
+-   Go ahead and practice both of these commands now.
+-   Now, install the package `palmerpenguins`
+
+## Keeping Notes {.smaller}
+- R is challenging to learn at first, so keeping detailed notes about what you learn is VERY useful
+- There are many ways to keep notes
+- 100 years ago, when I was learning R, I wrote everything down in a Word document so that I could copy and paste into the R console
+- That is still a valid option
+- However, R Studio now provides built in document types that can act as resources
+- These documents may be easier to organize, compared to a Word document
+
+---
+
+
+## Understanding Data
+
+-   It's important to familiarize yourself with your data
+
+-   Some key commands are:
+
+-   `head(df)`
+
+-   `str(df)`
+
+-   `levels(df)`
+
+-   `length(df)`
+
+-   Go ahead and practice with these commands on `palmerpenguins`
+
+## Basic Summary Functions
+
+-   `summary(df$variable)`   
+-   Go ahead and take a moment to run this command on any variable of your choice, in the dataset `palmerpenguins`.
+- Remember that there are other important summary statistics, as well.
+- `median(df$variable)`
+- Others?
+
+## Summary Statistics Using the Tidyverse
+
+- The previous slides were using functions from *base R*, i.e., the commands that come with any download of R.
+- However, as we have seen, packages are an important part of using R in that they are often designed to make analyses easier.
+- In this exercise, we will use a summary statistic from the `tidyverse`
+- Do you remember how to access this package?
+
+##
+
+```{r, echo = TRUE}
+library(tidyverse)
+library(palmerpenguins)
+plyr::count(penguins, "species")
+```
+
+---
+
+- In general, the `plyr` and `dplyr` packages have hundreds of commands that can help you generate summary statistics about your data.
+- Often, those commands can also be applied across multiple variables, which will save you time.
+
+---
+
+```{r, echo = TRUE}
+penguins %>%
+  count(species, island, .drop = FALSE)
+```
+
+- Note that this code uses the ` %>% ` *pipe*. *Pipe* is a simple way of telling R "I want you to look in the penguins dataset and count species and island".
+---
+
+```{r, echo = TRUE}
+penguins %>%
+  summarise(avg_body_mass = mean(body_mass_g, na.rm = TRUE))
+```
+
+- Similar to the previous example, the *pipe* here is telling R "I want you to look in the penguins dataset and summarise the mean body mass of the sample, into a variable called 'average body mass'."
+
+## The Analysis Process
+
+- R is great at generating data, but it is up to you to identify **what** data is most important to communicate
+- Make sure you *always* present some summary statistics
+- If you're doing social science work, often this will be age range, percentage of females, percentage of ethnic groups, and so on.
+
+## Take a Break
+
+![](tired-exhausted.gif)
+
+## Messy Data
+
+- Usually, data is *messy*
+- Often it has NAs, or has been incorrectly entered, or is in the wrong format
+- I will go through each of these common occurrences, and how to deal with them
+
+## NAs
+
+- "NAs" là gì?
+- “NAs” are when you have missing data OR incorrectly inputted data
+- For example, you could have the following dataset:
+
+---
+
+```{r, echo = TRUE}
+ID <- c(122, 366, 789, NA, 1001) #randomized ID numbers
+score <- c(4, 60, 2, 1, 5) #scores given about feelings towards bears, from "Strongly Disagree" (a score of 1) to Strongly Agree (a score of 5)
+df <- data.frame(ID, score)
+df
+```
+
+- What issues do you notice in this dataframe?
+- This dataframe has the issue of a NA within the `ID` variable, and an incorrectly inputted number in the `score` variable
+- Since we are focusing on the NAs, let's address that first
+
+---
+
+- 
+
+##
+
+##

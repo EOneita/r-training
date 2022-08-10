@@ -1,0 +1,228 @@
+---
+title: "2019_december-analysis-template"
+author: "E. O. Davis"
+date: "12/5/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+It's good practice to include every library you will be using up here at the beginning (of course, make sure you have them all installed).
+
+```{r libraries}
+library(dplyr)
+library(tidyr)
+library(factoextra)
+library(ggplot2)
+library(ggthemes)
+library(ggpubr)
+library(calecopal)
+library(ggridges)
+library(Rmisc)
+```
+
+## Some notes on using R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+### Now for the actual document
+
+## Begin with the demographics
+
+Load the appropriate dataset of demographic characteristics, and perform the following code. Important notes are that `df` is your dataframe, and `group` is your variable, e.g. gender:
+
+```{r demographics}
+#For gender
+group_by(df, group) %>% mutate(percent = value/sum(value))
+
+#For age
+median(df$age)
+summary(df$age) 
+
+#For education level
+group_by(df, group) %>% mutate(percent = value/sum(value)) #I transfer these values into an excel, but this is something that needs to be changed
+
+#For ethnicity
+group_by(df, group) %>% mutate(percent = value/sum(value)) #I transfer these values into an excel, but this is something that needs to be changed
+
+#For religion
+group_by(df, group) %>% mutate(percent = value/sum(value)) #I transfer these values into an excel, but this is something that needs to be changed
+
+##Graph of religion
+religion2 <- factor(religion$Religion, levels = c("r1", "r2", "r3")) #as above, order these by percent
+ggplot(data=religion, aes(x=religion2, y=Percent, fill=Religion)) +
+geom_bar(stat="identity", color="black", position=position_dodge())+
+  theme_minimal() +
+  xlab("") +
+  ylab("") +
+  theme(text = element_text(size=20))+
+  scale_fill_manual(values = cal_palette("desert"), breaks=c("r1", "r2", "r3")) +
+  labs(caption = "Religions Represented in the Sample")
+
+#Item analysis: more complex for being PCA
+##We have to turn our data into a matrix that looks like the following:
+#      TV    Radio     Mobile Phone
+# 2345 0     1          1
+# 5677 1     1          1
+# 2131 0     0          0
+# 1111 1     1          0
+
+df$Items <- as.character(df$Items)
+df$items.split <- strsplit(df$Items, ", ")
+df1 <- df %>% 
+   select(-Items) %>%
+   unnest(items.split) %>% 
+   table
+
+##and then we can perform the following code:
+res.pca <- prcomp(df1, scale = TRUE)
+fviz_pca_ind(res.pca,
+             col.ind = "cos2", # Color by the quality of representation
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE     # Avoid text overlapping
+             )
+
+fviz_pca_var(res.pca,
+             col.var = "contrib", # Color by contributions to the PC
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE     # Avoid text overlapping
+             )
+
+ind.coord <- res.pca$x
+head(ind.coord[, 1:4])
+
+fviz_pca_biplot(res.pca, repel = TRUE,
+                col.var = "#2E9FDF", # Variables color
+                col.ind = "#696969"  # Individuals color
+                )
+###the above needs to be worked on a bit more: need to expand understanding
+
+#Same process as PCA code above for medical care 
+
+##Medicinal systems: probably visualizing amounts, but think through alternatives..
+###Can also use this code
+as.data.frame(table(df$Which.types.of.medical.care.have.you.used.in.the.last.12.months...tick.all.that.apply.))
+
+as.data.frame(table(df$What.types.of.medical.care.have.you.used.MOST.in.the.last.12.months...tick.all.that.apply.))
+
+## Trust in countries medicine
+library( dplyr )
+thailand <- trust_country %>% 
+    group_by( `13.	Please indicate to what extent you trust or distrust medicine from the following countries. (Circle one response per row).  [Thailand]` ) %>% 
+    summarise( percent = 100 * n() / nrow( trust_country ) )
+
+other_country <- trust_country %>% 
+    group_by( `13.	Please indicate to what extent you trust or distrust medicine from the following countries. (Circle one response per row).  [Myanmar]` ) %>% 
+    summarise( percent = 100 * n() / nrow( trust_country ) )
+
+china <- trust_country %>% 
+    group_by( `13.	Please indicate to what extent you trust or distrust medicine from the following countries. (Circle one response per row).  [China]` ) %>% 
+    summarise( percent = 100 * n() / nrow( trust_country ) )
+
+```
+
+```{r prevalence}
+#Direct question code
+df %>% 
+    group_by(variable) %>% 
+    summarise( percent = 100 * n() / nrow( df ) ) ##will give percentage of yes and no
+
+#UCT
+df %>%
+  group_by(version) %>%
+  summarize(mean_size = mean(behaviors_done, na.rm = TRUE))
+  
+##Then take the "A" mean value and the "B" mean value and do A - B to get the UCT prevalence
+
+#NT
+nt_sum = (df$nt1 +(1/df$nt2))/nrows(df)
+
+```
+
+```{r beliefs}
+#Find CIs
+CI(df$`[Bear bile/bear gallbladder has medicinal value]`, ci = 0.95)
+
+CI(df$`[It is easy to find places to buy bear bile/bear gallbladder]`, 0.95)
+
+CI(df$`[There are effective medicinal alternatives to bear bile/bear gallbladder]`, 0.95)
+
+CI(df$`[The use of bear bile/bear gallbladder is an important part of my culture]`, ci = 0.95)
+
+```
+
+```{r graphs}
+#When visualizing amounts, you can use a barplot:
+##(e.g. Graph of ethnicity)
+ethnicity <- factor(ethnic$Ethnicity, levels = c("e1", "e2", "e3", "e4")) #order by highest percentage
+ggplot(data=ethnic, aes(x=ethnicity, y=Percent, fill=Ethnicity)) +
+geom_bar(stat="identity", color="black", position=position_dodge())+
+  theme_minimal() +
+  xlab("") +
+  theme(text = element_text(size=20))+
+  scale_fill_manual(values = cal_palette("bigsur"), breaks=c("e1", "e2", "e3", "e4")) +
+  labs(caption = "Ethnicities Represented in the Sample")
+
+##e.g. facetting amounts, for true/false
+ggplot(true, aes(fill=Response, y=Percent, x=Response)) + 
+    geom_bar(position="dodge", stat="identity") +
+    scale_fill_manual(values = cal_palette("bigsur")) +
+    ggtitle("") +
+    facet_wrap(~Question) +
+    theme_minimal() +
+    theme(legend.position="none",
+          text = element_text(size = 20)) +
+    xlab("") +
+  scale_x_discrete(limits=c("TRUE", "FALSE", "DON'T KNOW"))
+
+#When showing Likert scale values, you can use the following template
+ggplot(trust, aes(x=Category, y=Percent, fill=factor(Level.of.Trust, levels=c("Completely Trust", "Trust", "Neither trust nor distrust", "Distrust", "Completely Distrust")))) +
+  geom_bar(colour="black", stat="identity",
+           #position=position_dodge(),
+           size=.3) +                        # Thinner lines
+  theme_minimal() +
+  theme(text = element_text(size = 20),
+        legend.position = "bottom",
+        plot.title = element_text(hjust = 0.5),
+        legend.title = element_blank()) +
+  scale_fill_manual(values = cal_palette("bigsur")) +
+  guides(fill=guide_legend(title="Level of Trust")) +
+  xlab("Category") +
+  scale_x_discrete(limits=c("most trusted", "to", "least trusted")) +
+  ylab("Percent (%)") +
+   guides(fill = guide_legend(reverse = TRUE)) +
+  coord_flip() 
+
+#When visualizing confidence intervals, you can use this template
+ggplot(beliefs_graph, aes(x=Question))+
+  geom_point(aes(y=Average, color=Question),size=3,position=position_dodge(1))+
+  geom_errorbar(aes(ymin=Lower.CI, ymax=Upper.CI, color=Question), position=position_dodge(1),cex=1, width = .5) +
+  theme_minimal()+
+  theme(legend.position ="none",
+        text = element_text(size = 20),
+        axis.title.y=element_blank()) +
+  scale_color_manual(values = cal_palette("superbloom1")) +
+  #scale_fill_manual(values = cal_palette("bigsur"), labels = c("There are effective medicinal alternatives to bear bile/bear gallbladder", "Bear bile/bear gallbladder has medicinal value", "It is easy to find places to buy bear bile/bear gallbladder", "The use of bear bile/bear gallbladder is an important part of my culture")) +
+  scale_y_continuous(breaks=seq(1,5,by = 1), labels=c("Strongly\n Disagree", "Disagree", "Neither agree\n nor disagree", "Agree", "Strongly\n Agree"), expand=c(0.6,0.6)) +
+  xlab("") +
+  scale_x_discrete(limits=c("highest", "to", "lowest"))
+
+```

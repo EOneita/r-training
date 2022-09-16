@@ -9,6 +9,7 @@ format:
     slide-number: true
     show-slide-number: all
 editor: visual
+from: markdown+emoji
 ---
 
 ## Prep for Using R
@@ -20,24 +21,88 @@ editor: visual
 
 ![](rstudio.png)
 
+## Welcome {.smaller}
+
+::: {.fragment}
+This is **Day 1** of the R Refresher Workshop. You all should have some familiarity with R.
+:::
+
+::: {.fragment}
+**Day 1** Outline:
+:::
+
+- Installing packages
+- Keeping Notes
+- Basic Vocabulary
+- Understanding Data
+- Summary Statistics
+- Break :clock9:
+- The Analysis Process
+- Messy Data
+- Another Break :clock9:
+- Pivoting + Cleaning Data
+
+
 ## Installing packages
 
--   Easily done with `install.packages("tidyverse")`
+-   Easily done with `install.packages("package")`
 -   Sometimes packages need to be installed via an external site called *GitHub*.
 -   `devtools::install_github("tidyverse/ggplot2")`
 -   Go ahead and practice both of these commands now.
 -   Now, install the package `palmerpenguins`
 
 ## Keeping Notes {.smaller}
-- R is challenging to learn at first, so keeping detailed notes about what you learn is VERY useful
-- There are many ways to keep notes
-- 100 years ago, when I was learning R, I wrote everything down in a Word document so that I could copy and paste into the R console
-- That is still a valid option
-- However, R Studio now provides built in document types that can act as resources
-- These documents may be easier to organize, compared to a Word document
 
----
+-   R is challenging to learn at first, so keeping detailed notes about what you learn is VERY useful
+-   There are many ways to keep notes
+-   100 years ago, when I was learning R, I wrote everything down in a Word document so that I could copy and paste into the R console
+-   That is still a valid option
+-   However, R Studio now provides built in document types that can act as resources
+-   These documents may be easier to organize, compared to a Word document
 
+------------------------------------------------------------------------
+
+## Keeping Notes {.smaller}
+
+-   If you click on the "New document" icon, you'll see that it comes up with a number of possible file options
+-   The top-most one is R Script, a standard, blank script for writing R code
+-   A more advanced version is R Notebook, which has built-in capabilities for organizing your thoughts and code
+-   Finally, there are documents called R Markdown. These are similar to the R Notebook, but can be "rendered" into html documents (like this presentation!), PDF files, Word document files, and so on
+- This can be useful if you want to generate an automatic report of the work you have done.
+
+## 
+
+:::{.callout-note}
+For all of these options, you can write in Vietnamese.
+:::
+
+## Basic Vocabulary
+
+:::{.callout-tip}
+## Function
+
+Functions can also be termed "commands". These are executable actions you run on your data, such as `mean`, `summary`, and so on. Functions can be simple, as in those examples, or highly complex (but we won't worry about those yet!).
+:::
+
+:::{.callout-tip}
+## Vector
+
+A single string of numbers or characters, such as `x <- c(1,2,3,4,5)`. Multiple vectors can make up a dataset. A vector can also be a variable.
+:::
+
+##
+
+:::{.callout-tip}
+## Variable
+
+A variable is usually represented as a *column* in a dataset. Common examples of variables include gender, location, frequency of behavior, presence/absence, v.v.
+:::
+
+:::{.callout-tip}
+## Object
+
+Objects stand for different things we are analyzing. For example, an "object" would be something like "df", as a stand-in for the particular data frame you are analyzing, or in the above example. "x" stands in for the vector we want to analyze *Objects are a way for us to perform complex calculations on complex things, with minimal effort*.
+:::
 
 ## Understanding Data
 
@@ -57,20 +122,20 @@ editor: visual
 
 ## Basic Summary Functions
 
--   `summary(df$variable)`   
+-   `summary(df$variable)`\
 -   Go ahead and take a moment to run this command on any variable of your choice, in the dataset `palmerpenguins`.
-- Remember that there are other important summary statistics, as well.
-- `median(df$variable)`
-- Others?
+-   Remember that there are other important summary statistics, as well.
+-   `median(df$variable)`
+-   Others?
 
 ## Summary Statistics Using the Tidyverse
 
-- The previous slides were using functions from *base R*, i.e., the commands that come with any download of R.
-- However, as we have seen, packages are an important part of using R in that they are often designed to make analyses easier.
-- In this exercise, we will use a summary statistic from the `tidyverse`
-- Do you remember how to access this package?
+-   The previous slides were using functions from *base R*, i.e., the commands that come with any download of R.
+-   However, as we have seen, packages are an important part of using R in that they are often designed to make analyses easier.
+-   In this exercise, we will use a summary statistic from the `tidyverse`
+-   Do you remember how to access this package?
 
-##
+## 
 
 ```{r, echo = TRUE}
 library(tidyverse)
@@ -78,51 +143,53 @@ library(palmerpenguins)
 plyr::count(penguins, "species")
 ```
 
----
+------------------------------------------------------------------------
 
-- In general, the `plyr` and `dplyr` packages have hundreds of commands that can help you generate summary statistics about your data.
-- Often, those commands can also be applied across multiple variables, which will save you time.
+-   In general, the `plyr` and `dplyr` packages have hundreds of commands that can help you generate summary statistics about your data.
+-   Often, those commands can also be applied across multiple variables, which will save you time.
 
----
+------------------------------------------------------------------------
 
 ```{r, echo = TRUE}
 penguins %>%
   count(species, island, .drop = FALSE)
 ```
 
-- Note that this code uses the ` %>% ` *pipe*. *Pipe* is a simple way of telling R "I want you to look in the penguins dataset and count species and island".
----
+-   
+
+    ## Note that this code uses the `%>%` *pipe*. *Pipe* is a simple way of telling R "I want you to look in the penguins dataset and count species and island".
 
 ```{r, echo = TRUE}
 penguins %>%
   summarise(avg_body_mass = mean(body_mass_g, na.rm = TRUE))
 ```
 
-- Similar to the previous example, the *pipe* here is telling R "I want you to look in the penguins dataset and summarise the mean body mass of the sample, into a variable called 'average body mass'."
-
-## The Analysis Process
-
-- R is great at generating data, but it is up to you to identify **what** data is most important to communicate
-- Make sure you *always* present some summary statistics
-- If you're doing social science work, often this will be age range, percentage of females, percentage of ethnic groups, and so on.
+-   Similar to the previous example, the *pipe* here is telling R "I want you to look in the penguins dataset and summarise the mean body mass of the sample, into a variable called 'average body mass'."
 
 ## Take a Break
 
 ![](tired-exhausted.gif)
 
+
+## The Analysis Process
+
+-   R is great at generating data, but it is up to you to identify **what** data is most important to communicate
+-   Make sure you *always* present some summary statistics
+-   If you're doing social science work, often this will be age range, percentage of females, percentage of ethnic groups, and so on.
+
 ## Messy Data
 
-- Usually, data is *messy*
-- Often it has NAs, or has been incorrectly entered, or is in the wrong format
-- I will go through each of these common occurrences, and how to deal with them
+-   Usually, data is *messy*
+-   Often it has NAs, or has been incorrectly entered, or is in the wrong format
+-   I will go through each of these common occurrences, and how to deal with them
 
 ## NAs
 
-- "NAs" là gì?
-- “NAs” are when you have missing data OR incorrectly inputted data
-- For example, you could have the following dataset:
+-   "NAs" là gì?
+-   "NAs" are when you have missing data OR incorrectly inputted data
+-   For example, you could have the following dataset:
 
----
+##
 
 ```{r, echo = TRUE}
 ID <- c(122, 366, 789, NA, 1001) #randomized ID numbers
@@ -131,14 +198,643 @@ df <- data.frame(ID, score)
 df
 ```
 
-- What issues do you notice in this dataframe?
-- This dataframe has the issue of a NA within the `ID` variable, and an incorrectly inputted number in the `score` variable
-- Since we are focusing on the NAs, let's address that first
+-   What issues do you notice in this dataframe?
+-   This dataframe has the issue of a NA within the `ID` variable, and an incorrectly inputted number in the `score` variable
+-   Since we are focusing on the NAs, let's address that first
+
+##  {.smaller}
+
+-   The simplest way to handle this issue is through the following command:
+
+```{r, echo = TRUE}
+na.omit(df)
+```
+
+-   But, note that it removes an entire row from your dataset
+-   This is acceptable if you have a large dataset, but sometimes you will want to retain the other information
+-   For example, if you were reporting the average score of this dataset, you would want to keep the fourth row
+-   Therefore, it is often good practice to assess the number of NAs you have nested within a variable, and remove them on a case-by-case basis
+
+##
+
+:::: {.columns}
+
+::: {.column width="40%"}
+- In this example, if you were reporting average score, you would simply run the following:
+:::
+
+::: {.column width="60%"}
+```{r, echo = TRUE}
+mean(df$score)
+```
+
+:::
+
+::::
+
+##
+
+- Although, you can see that this results in a nonsense number- since we know we were only supposed to be measuring scores from 1 to 5!
+- Since we want to make sure we get the right result, let's address the outlier we can see in our data- the "60" data point.
+
+## Finding Outliers
+
+- In this example, we can easily see that there's an outlier
+- But what if we have a dataset with 1000s of datapoints?
+- The easiest way to handle this is in Excel, using the "Sort" function
+- When you identify outliers this way, you can remove them from the data easily by simply pressing "delete" and creating a null result
+- ... Which R translates as "NA"
+
+## Handling NAs within a function
+
+- For the moment, I will show you how to designate our "60" value as NA
+
+```{r, echo = TRUE}
+df$score[which(df$score == 60)] <- NA
+df
+```
+
+
+- Now, we could do what we learned before, and run `na.omit` on the full dataset
+- Alternatively, we can tell R we want to omit NAs within the function itself
+
+##
+
+```{r, echo = TRUE}
+mean(df$score, na.rm = TRUE)
+```
+
+- The `na.rm` is shorthand for "NA remove", and is a specific action you can ask R to do, within the function itself
+- Many functions in R have this capability, and as you can see, it helps you speed up the analysis process by combining two actions into one
+
+##
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Consider this
+
+```{r, echo =TRUE}
+df <- na.omit(df)
+mean(df$score)
+```
+
+
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+
+Versus this...
+
+```{r, echo = TRUE}
+mean(df$score, na.rm = TRUE)
+```
+
+:::
+:::
+
+::::
+
+## Let's take another break
+
+![](tea-time-yoga.gif)
+
+## Wide versus Long Format
+
+![*From The Carpentries website*](wide-long.png)
+---
+
+:::{.callout-note}
+Generally, you'll want your data to be in "long" format - this is what R prefers for running analyses such as linear models (which we'll get to later).
+:::
+
+
+## What do you do when data is in the wrong format?
+
+- There are two options:
+
+. . .
+
+1) Make adjustments in Excel
+
+::: {.fragment}
+... which can be laborious.
+:::
+
+2) Or, make adjustments in R using the tidyverse
+
+::: {.fragment}
+... which is significantly quicker, once you understand how it works.
+:::
 
 ---
 
-- 
+::: {style="text-align: center"}
+I'll show this in Excel now
+:::
+
+::: {style="text-align: center"}
+::: {.fragment}
+.As you can see, this takes awahile, and can be ungainly with large datasets.
+:::
+:::
+
+## In the `tidyverse`
+
+- Two main functions:
+
+:::{.fragment}
+`pivot_wider()`
+:::
+
+:::{.fragment}
+`pivot_longer()`
+:::
+
+---
+
+![*From The Carpentries website*](pivot-pic.png)
+
+## Let's try this with the dataset we used in Excel
+
+:::{.fragment}
+```{r, echo = TRUE}
+library(readxl)
+df <- read_excel("r-training-practice-wide-format.xlsx") #import our dataset
+```
+:::
+
+:::{.fragment}
+Now we can do some pivot magic.
+:::
+
+:::{.fragment}
+```{r, echo = TRUE}
+library(tidyverse)
+df <- janitor::clean_names(df)
+df1 <- df %>% 
+  pivot_longer(cols = male:female,
+             names_to = "gender",
+             values_to = "integer") 
+df2 <- df1 %>% 
+  pivot_longer(cols = tay_ninh:hanoi,
+               names_to = "province",
+               values_to = "score")
+```
+:::
 
 ##
+
+```{r}
+df2
+```
+
+
+##
+::: {style="text-align: center"}
+As you can see, there's still some clean-up that needs to happen! What should we do next?
+:::
+
+::: {style="text-align: center"}
+::: {.fragment}
+It looks like we can do the "quick and dirty" `na.omit`. Let's do so now.
+:::
+:::
+
+::: {.fragment}
+```{r, echo = TRUE}
+df3 <- na.omit(df2)
+```
+
+:::
+
+##
+::: {style="text-align: center"}
+Which gives us this:
+
+:::
+
+::: {.fragment}
+```{r}
+df3
+```
+
+:::
+
+::: {style="text-align: center"}
+::: {.fragment}
+This already looks so much better! What do we need to do next?
+:::
+:::
+
+##
+::: {style="text-align: center"}
+We now need to clean up our gender variable.
+:::
+
+::: {style="text-align: center"}
+::: {.fragment}
+To do this, we should remove all of the "0"s in the integer variable.
+:::
+:::
+
+::: {.fragment}
+```{r, echo = TRUE}
+df4<-subset(df3, integer!=0)
+df4
+```
+:::
+
+::: {.fragment}
+Finally!
+:::
+
+---
+::: {style="text-align: center"}
+::: {.fragment}
+... although there's one last thing we should do, to make sure our data is squeaky clean.
+:::
+:::
+
+::: {.fragment}
+```{r, echo = TRUE}
+df4$integer <- NULL
+```
+:::
+
+::: {style="text-align: center"}
+::: {.fragment}
+This command tells R that we want to *drop* the `integer` column. In this example, we don't need it anymore, since our gender column is now what we want it to be.
+:::
+:::
+
+## That's the end of Day 1!
+
+![](vaporwave.gif)
+
+::: {style="text-align: center"}
+# Day 2
+:::
+
+## Welcome {.smaller}
+
+::: {.fragment}
+This is **Day 2** of the R Refresher Workshop. Hopefully everyone is excited to begin again!
+:::
+
+::: {.fragment}
+**Day 2** Outline:
+:::
+
+- Confidence Intervals 
+- Break :clock9:
+- Linear Regression
+- Another Break :clock9:
+- Interaction Terms in Linear Models
+- Practice Data Analysis
+
+
+## Measuring effect size
+
+- Often, we need to prove that we see an effect between groups
+- This is because even though means may differ, the *variance* within the data may overlap 
+- For example:
+
+##
+
+![](ci-uct-vietnam.png)
+
+## Confidence intervals
+
+- Confidence intervals are one of the most robust methods we can use to assess effect size.
+- They perform calculations to *measure the spread of data around a mean*.
+- Confidence intervals show us all possible means we might see, with the data we have.
+- If these means overlap between groups, then that means we must reject the presence of an effect.
+
+## Confidence intervals and penguins
+
+::: {.fragment}
+![](https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png)
+:::
+
+## Confidence intervals and penguins
+
+- First, let's load our penguins data back into R Studio
+
+::: {.fragment}
+```{r, echo = TRUE}
+library(palmerpenguins)
+data("penguins")
+```
+
+:::
+
+- Hopefully you remember what we should do next!
+
+##
+
+```{r, echo = TRUE}
+head(penguins)
+```
+
+##
+
+```{r, echo =TRUE}
+str(penguins)
+```
+
+## Bill length
+
+- It looks like we could explore bill length between the three species of penguin, to understand whether there is a significant ("real") difference between bill lengths
+- Something quick we can do is a boxplot to visualize the three different sets of data
+- I'll show you how here:
+
+## {.smaller}
+
+```{r, echo = TRUE}
+library(tidyverse)
+#devtools::install_github("an-bui/calecopal") - make sure you have devtools installed!
+library(calecopal)
+
+ggplot(penguins, aes(x = species, y = bill_length_mm, color = species, fill = species)) +
+  scale_color_manual(values = cal_palette("calochortus"), guide = "none") +
+  scale_fill_manual(values = cal_palette("calochortus"), guide = "none") +
+  geom_boxplot(alpha = .5, size = 1.5, outlier.size = 5)
+
+```
+
+## Boxplot interpretation
+
+- We can see that all three species appear to overlap
+- This means that there is no significant difference in bill length between the three species, based on the data we have
+- ... but let's back that up with calculations, too
+
+## Calculating confidence intervals in R
+
+- Install the `gmodels` package
+- We will use the `ci` function in gmodels to calculate the confidence intervals we need
+- To use it, we will need to create data subsets, by species
+- We'll use the `tidyverse` to do this
+
+## 
+
+```{r, echo = TRUE}
+library(tidyverse)
+levels(penguins$species) #we should check what the species names are
+adelie <- penguins %>% 
+  dplyr::filter(species == "Adelie")
+
+gentoo <- penguins %>% 
+  dplyr::filter(species == "Gentoo")
+
+chinstrap <- penguins %>% 
+  dplyr::filter(species == "Chinstrap")
+```
+
+## Now to do the confidence intervals
+
+::: {.fragment}
+```{r, echo = TRUE}
+gmodels::ci(adelie$bill_length_mm)
+```
+
+:::
+
+::: {.fragment}
+![](scared-cat.gif)
+:::
+
+##
+
+- That wasn't what we wanted! What do we think the problem is?
+- Dúng rồi. We need to remove the NAs in our data.
+
+::: {.fragment}
+```{r, echo = TRUE}
+gmodels::ci(adelie$bill_length_mm, na.rm = TRUE)
+```
+:::
+
+- That's better!
+- Now, let's do the same for our two other species. Go ahead and try now.
+
+## 
+
+::: {.fragment}
+```{r, echo = TRUE}
+gmodels::ci(gentoo$bill_length_mm, na.rm = TRUE)
+gmodels::ci(chinstrap$bill_length_mm, na.rm = TRUE)
+```
+:::
+
+## Bringing it all together
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.fragment}
+Adelie
+:::
+
+::: {.fragment}
+Gentoo
+:::
+
+::: {.fragment}
+Chinstrap
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+
+38.8 (38.4, 39.2)
+
+:::
+
+::: {.fragment}
+47.5 (47, 48.1)
+:::
+
+::: {.fragment}
+48.8 (48, 49.6)
+:::
+:::
+
+::::
+
+- We can see that contrary to our boxplot, there is no overlap between Adelie penguins' bill length, and the other two species
+- And there is only a slight overlap between Gentoos and Chinstraps
+
+## 
+
+- However, a good scientist always checks their work
+- This is so different from our visualized boxplot, that it's worth assessing more
+- We can do this by seeing how many NAs we removed
+- If we removed a lot, then we can infer that perhaps the data became skewed, and/or the sample size was simply too small to make good inferences
+
+##
+
+- Here is how to do that:
+
+::: {.fragment}
+```{r, echo = TRUE}
+sum(is.na(adelie$bill_length_mm))
+sum(is.na(gentoo$bill_length_mm))
+sum(is.na(chinstrap$bill_length_mm))
+```
+
+:::
+
+- This actually looks pretty good!
+- And if we look at our Environment, we can see that the sample sizes were fairly robust, too.
+
+## Final notes
+
+- We saw the boxplot, but we also saw that the boxplot wasn't totally accurate in showing the actual effect
+- That's because the `boxplot` command in ggplot calculates confidence intervals *differently*
+- So, you shouldn't rely on the visualization
+- Always calculate confidence intervals out in R, and report those
+
+
+## Breaktime!
+
+![](vapor-break.gif)
+
+## Linear Regression
+
+- A fundamental concept in statistics
+- A core function that predicts *correlation* between different variables
+- Correlation là gì?
+- "Any statistical relationship, whether causal or not, between two random variables"
+- Often in science, we DO want to understand causation as well, i.e. whether one thing directly affected another thing
+
+##
+
+- For example, we may want to measure whether an education campaign against bear farming *caused* bear farmers to stop farming bears
+- Proving causation is hard to do for many scientists, so correlation is used as a proxy
+
+::: {.fragment}
+:::{.callout-warning}
+Correlation and causation are not the same. Be careful when writing your results!
+:::
+:::
+
+## Linear regression
+
+- For now, let's focus on linear regression
+- Linear regression is also known as "linear models", or sometimes "logistic regression"
+- The names vary depending on the calculations being performed
+- It is a very easy command to do in R, and easy to understand
+- For example, let's say that rather than use confidence intervals, we wanted to use linear regression to explore the *relationship* between `species` and `bill_length_mm`
+
+## Refresher on Variables
+
+- **Dependent variable**: Our variable of interest. It's called "dependent" because we are investigating whether it *depends* on certain attributes within our independent variable(s)
+- **Independent variable**: "Static" variables that we think *may* influence the dependent variable.
+
+
+## {.smaller}
+
+::: {.fragment}
+```{r, echo = TRUE}
+m1 <- lm(penguins$bill_length_mm ~ penguins$species)
+```
+:::
+
+- You can see that in our linear model, our *dependent* variable is written first, followed by our *independent variable*
+- This notation follows how we would say this in words: "We are investigating whether bill length depends on species, in these three species of penguins."
+- Once it's in your Environment, run `summary(m1)`.
+- You should see this output:
+
+::: {.fragment}
+::: {#fig-lm}
+
+<iframe width="600" height="400" src="lm-output.png"></iframe>
+
+*Summary output*
+:::
+:::
+
+##
+- This output is showing us that **there is a relationship between species and bill length**
+- Put another way: "Bill length is *correlated* with species"
+
+## Linear Regression: A Powerful and Adaptable Tool
+
+- Linear models can be built to investigate nearly any question you may have
+- Go ahead and try to build some more linear models in the penguins dataset, with ONE dependent variable, and ONE independent variable.
+
+## Another break
+
+![](tea-time.gif)
+
+## Interaction Terms in Linear Models
+
+- Hopefully you all feel confident with a simple `lm(y ~x)` model
+- Now, we'll talk about how to handle multiple independent variables
+- Often, we expect that some independent variables will interact with one another, such as *height* and *weight*
+- In linear models in R, you have to specify the *type* of interaction you are exploring
+- I will show you two examples
+
+## No expected relationship between variables
+
+- If we expect independent variables to be independent of one another, we treat them separately in the model:
+
+::: {.fragment .fade-out}
+```{r, echo = TRUE}
+m2 <- lm(penguins$bill_length_mm ~ penguins$species + penguins$sex)
+```
+:::
+
+::: {.fragment}
+::: {#fig-lm-2}
+
+<iframe width="600" height="300" src="lm-out-ex-2.png"></iframe>
+
+*Summary output*
+:::
+:::
+
+## Expected interaction between independent variables
+
+- Sometimes, we do expect for an interaction to be present between independent variables
+
+::: {.fragment}
+```{r, echo = TRUE}
+m3 <- lm(penguins$flipper_length_mm ~ penguins$bill_length_mm * penguins$bill_depth_mm)
+```
+
+:::
+
+##
+
+![](lmoutexthree.png)
+
+## Practice Data Analysis
+
+- Now, I want you all to practice on a dataset.
+- You can choose from several pre-loaded datasets:
+- `starwars`
+- `storms`
+- `mtcars`
+- `diamonds`
+
+## The Data Analysis Process
+
+1) Understand your dataset
+2) Calculate summary statistics
+3) Calculate confidence intervals OR linear regression
+4) Write your results
+5) Make a presentation (one or two slides) about your findings
+6) *BONUS*: Make graphs using `ggplot2`
+
+::: {style="text-align: center"}
+::: {.fragment}
+:sparkles: You can do this as a group! :raised_hands:
+:::
+:::
 
 ##

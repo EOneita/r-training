@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="2022_r-refresher-workshop_files/libs/clipboard/clipboard.min.js"></script>
-<script src="2022_r-refresher-workshop_files/libs/quarto-html/tabby.min.js"></script>
-<script src="2022_r-refresher-workshop_files/libs/quarto-html/popper.min.js"></script>
-<script src="2022_r-refresher-workshop_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="2022_r-refresher-workshop_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="2022_r-refresher-workshop_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="2022_r-refresher-workshop_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.38">
+<script src="2022_r-refresher-workshop-viet_files/libs/clipboard/clipboard.min.js"></script>
+<script src="2022_r-refresher-workshop-viet_files/libs/quarto-html/tabby.min.js"></script>
+<script src="2022_r-refresher-workshop-viet_files/libs/quarto-html/popper.min.js"></script>
+<script src="2022_r-refresher-workshop-viet_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="2022_r-refresher-workshop-viet_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="2022_r-refresher-workshop-viet_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="2022_r-refresher-workshop-viet_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.1.179">
 
   <meta name="author" content="Elizabeth O. Davis">
-  <title>2022 R Refresher Workshop</title>
+  <title>2022 Hội Thảo Bồi Dưỡng R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="2022_r-refresher-workshop_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="2022_r-refresher-workshop_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="2022_r-refresher-workshop-viet_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="2022_r-refresher-workshop-viet_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -88,11 +93,11 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="2022_r-refresher-workshop_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-  <link href="2022_r-refresher-workshop_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="2022_r-refresher-workshop_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="2022_r-refresher-workshop_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="2022_r-refresher-workshop_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="2022_r-refresher-workshop-viet_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link href="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -383,71 +388,71 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">2022 R Refresher Workshop</h1>
+  <h1 class="title">2022 Hội Thảo Bồi Dưỡng R</h1>
   <p class="author">Elizabeth O. Davis</p>
 </section>
 
-<section id="prep-for-using-r" class="slide level2">
-<h2>Prep for Using R</h2>
+<section id="chuẩn-bị-sử-dụng-r" class="slide level2">
+<h2>Chuẩn Bị Sử Dụng R</h2>
 <ul>
-<li class="fragment">Các bạn đã tải xuống R chưa?</li>
-<li class="fragment">Các bạn đã tải xuống R Studio chưa?</li>
+<li class="fragment">Các bạn đã tải R chưa?</li>
+<li class="fragment">Các bạn đã tải R Studio chưa?</li>
 </ul>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
 
 <img data-src="rstudio.png" class="r-stretch"></section>
-<section id="welcome" class="slide level2 smaller">
-<h2>Welcome</h2>
+<section id="chào-mừng" class="slide level2 smaller">
+<h2>Chào mừng</h2>
 <div class="fragment">
-<p>This is <strong>Day 1</strong> of the R Refresher Workshop. You all should have some familiarity with R.</p>
+<p>Đây là <strong>ngày đầu tiên</strong> của Hội Thảo Bồi Dưỡng. Các bạn chắc đã làm quen với R rồi.</p>
 </div>
 <div class="fragment">
-<p><strong>Day 1</strong> Outline:</p>
+<p><strong>Ngày đầu tiên</strong> nội dung chính:</p>
 </div>
 <ul>
-<li class="fragment">Installing packages</li>
-<li class="fragment">Keeping Notes</li>
-<li class="fragment">Basic Vocabulary</li>
-<li class="fragment">Understanding Data</li>
-<li class="fragment">Summary Statistics</li>
-<li class="fragment">Break <span class="emoji" data-emoji="clock9">🕘</span></li>
-<li class="fragment">The Analysis Process</li>
-<li class="fragment">Messy Data</li>
-<li class="fragment">Another Break <span class="emoji" data-emoji="clock9">🕘</span></li>
-<li class="fragment">Pivoting + Cleaning Data</li>
+<li class="fragment">Cài đặt “packages”/gói dữ liệu</li>
+<li class="fragment">Giữ lại ghi chú</li>
+<li class="fragment">Từ vựng cơ bản</li>
+<li class="fragment">Hiểu dữ liệu</li>
+<li class="fragment">Tóm tắt thống kê</li>
+<li class="fragment">Giải lao <span class="emoji" data-emoji="clock9">🕘</span></li>
+<li class="fragment">Quy trình phân tích dữ liệu</li>
+<li class="fragment">Dữ liệu lộn xộn</li>
+<li class="fragment">Giải lao <span class="emoji" data-emoji="clock9">🕘</span></li>
+<li class="fragment">Xoay chiều (“pivoting”) và dọn dẹp dữ liệu</li>
 </ul>
 </section>
-<section id="installing-packages" class="slide level2">
-<h2>Installing packages</h2>
+<section id="cài-đặt-packagesgói-dữ-liệu" class="slide level2">
+<h2>Cài đặt “packages”/gói dữ liệu</h2>
 <ul>
-<li class="fragment">Easily done with <code>install.packages("tidyverse")</code></li>
-<li class="fragment">Sometimes packages need to be installed via an external site called <em>GitHub</em>.</li>
+<li class="fragment">Dễ dàng được thực hiện với <code>install.packages("package")</code></li>
+<li class="fragment">Thỉnh thoảng gói dữ liệu cần cài đặt thông qua trang ngoài được gọi là <em>GitHub</em>.</li>
 <li class="fragment"><code>devtools::install_github("tidyverse/ggplot2")</code></li>
-<li class="fragment">Go ahead and practice both of these commands now.</li>
-<li class="fragment">Now, install the package <code>palmerpenguins</code></li>
+<li class="fragment">Bây giờ hãy luyện tập cả hai mệnh lệnh này</li>
+<li class="fragment">Bây giờ cài đặt gói dữ liệu <code>palmerpenguins</code></li>
 </ul>
 </section>
-<section id="keeping-notes" class="slide level2 smaller">
-<h2>Keeping Notes</h2>
+<section id="giữ-ghi-chú" class="slide level2 smaller">
+<h2>Giữ ghi chú</h2>
 <ul>
-<li class="fragment">R is challenging to learn at first, so keeping detailed notes about what you learn is VERY useful</li>
-<li class="fragment">There are many ways to keep notes</li>
-<li class="fragment">100 years ago, when I was learning R, I wrote everything down in a Word document so that I could copy and paste into the R console</li>
-<li class="fragment">That is still a valid option</li>
-<li class="fragment">However, R Studio now provides built in document types that can act as resources</li>
-<li class="fragment">These documents may be easier to organize, compared to a Word document</li>
+<li class="fragment">R có thể sẽ khó khi mới bắt đầu học, nên ghi chú một cách cụ thể về nhũng gì bạn được học sẽ rất hữu ích.</li>
+<li class="fragment">Có nhiều cách để giữ ghi chú</li>
+<li class="fragment">Một trăm năm trước khi chị học R, chị viết mọi thứ trên Word nên chị có thề copy và paste trên R console</li>
+<li class="fragment">Bạn cũng có thể làm như vậy</li>
+<li class="fragment">Tuy nhiên bây giờ R Studio có thề cung cấp những kiểu tài liệu tích hợp</li>
+<li class="fragment">Những kiểu tài liệu này có lẽ dễ hơn để sắp xếp, so với Word</li>
 </ul>
 </section>
-<section id="keeping-notes-1" class="slide level2 smaller">
-<h2>Keeping Notes</h2>
+<section id="giữ-ghi-chú-1" class="slide level2 smaller">
+<h2>Giữ ghi chú</h2>
 <ul>
-<li class="fragment">If you click on the “New document” icon, you’ll see that it comes up with a number of possible file options</li>
-<li class="fragment">The top-most one is R Script, a standard, blank script for writing R code</li>
-<li class="fragment">A more advanced version is R Notebook, which has built-in capabilities for organizing your thoughts and code</li>
-<li class="fragment">Finally, there are documents called R Markdown. These are similar to the R Notebook, but can be “rendered” into html documents (like this presentation!), PDF files, Word document files, and so on</li>
-<li class="fragment">This can be useful if you want to generate an automatic report of the work you have done.</li>
+<li class="fragment">Nếu bạn click vào biểu tượng “New File”, bạn sẽ thấy nó hiện ra rất nhiều kiểu tài liệu để lựa chọn</li>
+<li class="fragment">Đầu tiên là R Script, một tài liệu cơ bản và trống để viết R code</li>
+<li class="fragment">Một phiên bản cao cấp hơn là R Notebook, có khả năng giúp sắp xếp suy nghĩ và code.</li>
+<li class="fragment">Cuối cùng là R Markdown. Tương tự như R Notebook, nhưng có thề “render” thành tài liệu “html” (như bản thuyết trình này!), tài liệu PDF, tài liệu Word, v.v.</li>
+<li class="fragment">R markdown có thể sẽ hữu ích nếu bạn muốn tạo ra một bản báo cáo tự động về công việc bạn đã làm.</li>
 </ul>
 </section>
 <section id="section-1" class="slide level2">
@@ -461,99 +466,106 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>For all of these options, you can write in Vietnamese.</p>
+<p>Cho những sự lựa chọn này, bạn có thể viết bằng tiếng Việt.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="basic-vocabulary" class="slide level2">
-<h2>Basic Vocabulary</h2>
+<section id="từ-vựng-cơ-bản" class="slide level2">
+<h2>Từ vựng cơ bản</h2>
+<div class="fragment">
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Function</strong></p>
+<p><strong>Hàm</strong></p>
 </div>
 <div class="callout-content">
-<p>Functions can also be termed “commands”. These are executable actions you run on your data, such as <code>mean</code>, <code>summary</code>, and so on. Functions can be simple, as in those examples, or highly complex (but we won’t worry about those yet!).</p>
+<p>Hàm cũng có thề gơi là những câu lệnh. Đay là những hành động có thể thực hiện được để chạy dữ liệu, như là <code>mean</code>, <code>summary</code>, v.v.</p>
 </div>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Vector</strong></p>
+<p><strong>Vectơ</strong></p>
 </div>
 <div class="callout-content">
-<p>A single string of numbers or characters, such as <code>x &lt;- c(1,2,3,4,5)</code>. Multiple vectors can make up a dataset. A vector can also be a variable.</p>
+<p>Một dãy các con số và/hoặc kí tự, như là <code>x &lt;- c(1,2,3,4,5)</code>. Nhiều vectơ có thề tạo ra hệ thống dữ liệu. Một vectơ cũng có thề là một biến số.</p>
+</div>
 </div>
 </div>
 </div>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
+<div class="fragment">
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Variable</strong></p>
+<p><strong>Biến số</strong></p>
 </div>
 <div class="callout-content">
-<p>A variable is usually represented as a <em>column</em> in a dataset. Common examples of variables include gender, location, frequency of behavior, presence/absence, v.v.</p>
+<p>Một biến số thường được trình bày như một <em>cột</em> trong bảng dữ liệu. Những ví dụ thường thấy của biến số gồm giới tính, địa điểm, tần suất hành vi, v.v.</p>
 </div>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Object</strong></p>
+<p><strong>Đối tượng</strong></p>
 </div>
 <div class="callout-content">
-<p>Objects stand for different things we are working with. For example, an “object” would be something like “df”, as a stand-in for the particular data frame you are working with, or in the above example. “x” stands in for the vector we want to work with. <em>Objects are a way for us to perform complex calculations on complex things, with minimal effort</em>.</p>
+<p>Đối tượng đại diện cho nhiều thứ khác nhau mà chúng ta đang phân tích. Ví dụ, “đối tượng” có thề là “df”, như là như một sự đại diện cho khung dữ liệu cụ thể mà bạn đang phân tích. Hay, trong ví dụ trên, “x” thay thế cho vecto chúng ta muốn phân tích. <em>Đối tượng là cách để chúng ta thực hiện nhứng phép tính phức tạp trên những thứ phức tạp, nhưng chỉ cần một ít nỗ lực để phân tích.</em></p>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="understanding-data" class="slide level2">
-<h2>Understanding Data</h2>
+<section id="hiểu-dữ-liệu" class="slide level2">
+<h2>Hiểu dữ liệu</h2>
 <ul>
-<li class="fragment"><p>It’s important to familiarize yourself with your data</p></li>
-<li class="fragment"><p>Some key commands are:</p></li>
+<li class="fragment"><p>Làm quen với dữ liệu là rất quan trọng</p></li>
+<li class="fragment"><p>Một vài câu lệnh chính là:</p></li>
 <li class="fragment"><p><code>head(df)</code></p></li>
 <li class="fragment"><p><code>str(df)</code></p></li>
 <li class="fragment"><p><code>levels(df)</code></p></li>
 <li class="fragment"><p><code>length(df)</code></p></li>
-<li class="fragment"><p>Go ahead and practice with these commands on <code>palmerpenguins</code></p></li>
+<li class="fragment"><p>Bây giờ, hãy luyện tập với những câu lệnh này trên <code>palmerpenguins</code></p></li>
 </ul>
 </section>
-<section id="basic-summary-functions" class="slide level2">
-<h2>Basic Summary Functions</h2>
+<section id="những-hàm-tóm-tắt-cơ-bản" class="slide level2">
+<h2>Những hàm tóm tắt cơ bản</h2>
 <ul>
-<li class="fragment"><code>summary(df$variable)</code><br>
-</li>
-<li class="fragment">Go ahead and take a moment to run this command on any variable of your choice, in the dataset <code>palmerpenguins</code>.</li>
-<li class="fragment">Remember that there are other important summary statistics, as well.</li>
+<li class="fragment"><code>summary(df$variable)</code></li>
+<li class="fragment">Hay dành ra một ít thời gian để thực hiện câu lệnh này trên bất kì biến số nào mà bạn chọn, trong bảng dữ liệu <code>palmerpenguins</code>.</li>
+<li class="fragment">Hãy nhớ rằng có những thống kê tóm tắt quan trọng khác.</li>
 <li class="fragment"><code>median(df$variable)</code></li>
-<li class="fragment">Others?</li>
+<li class="fragment">Ví dụ khác?</li>
 </ul>
 </section>
-<section id="summary-statistics-using-the-tidyverse" class="slide level2">
-<h2>Summary Statistics Using the Tidyverse</h2>
+<section id="thống-kê-tóm-tắt-sử-dụng-tidyverse" class="slide level2">
+<h2>Thống kê tóm tắt sử dụng Tidyverse</h2>
 <ul>
-<li class="fragment">The previous slides were using functions from <em>base R</em>, i.e., the commands that come with any download of R.</li>
-<li class="fragment">However, as we have seen, packages are an important part of using R in that they are often designed to make analyses easier.</li>
-<li class="fragment">In this exercise, we will use a summary statistic from the <code>tidyverse</code></li>
-<li class="fragment">Do you remember how to access this package?</li>
+<li class="fragment">Các trang trình bày trước đó đang sử dụng các hàm từ <em>cơ sở R</em>, nói cách khác các lệnh đi kèm với bất kỳ bản tải xuống nào của R.</li>
+<li class="fragment">Như chúng ta đã thấy, các gói là một phần quan trọng của việc sử dụng R vì chúng thường được thiết kế để giúp phân tích dễ dàng hơn.</li>
+<li class="fragment">Trong bài tập này, chúng ta sẽ sử dụng một thống kê tóm tắt từ <code>tidyverse</code></li>
+<li class="fragment">Các em có nhớ cách truy cập gói này không?</li>
 </ul>
 </section>
 <section id="section-3" class="slide level2">
@@ -573,8 +585,8 @@
 <section class="slide level2">
 
 <ul>
-<li class="fragment">In general, the <code>plyr</code> and <code>dplyr</code> packages have hundreds of commands that can help you generate summary statistics about your data.</li>
-<li class="fragment">Often, those commands can also be applied across multiple variables, which will save you time.</li>
+<li class="fragment"><code>plyr</code> và <code>dplyr</code> có hàng trăm lệnh có thể giúp các em tạo thống kê tóm tắt về dữ liệu của mình.</li>
+<li class="fragment">Thường, những lệnh đó cũng có thể được áp dụng trên nhiều biến, điều này sẽ giúp các em tiết kiệm thời gian.</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -598,8 +610,11 @@
 </div>
 </div>
 <ul>
-<li class="fragment"><h2 id="note-that-this-code-uses-the-pipe.-pipe-is-a-simple-way-of-telling-r-i-want-you-to-look-in-the-penguins-dataset-and-count-species-and-island.">Note that this code uses the <code>%&gt;%</code> <em>pipe</em>. <em>Pipe</em> is a simple way of telling R “I want you to look in the penguins dataset and count species and island”.</h2></li>
+<li class="fragment">Lưu ý rằng mã này sử dụng <code>%&gt;%</code> <em>pipe</em>. <em>Pipe</em> là một cách đơn giản để nói với R “Tôi muốn bạn tìm trong tập dữ liệu về chim cánh cụt và đếm các loài cũng như đảo”.</li>
 </ul>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>penguins <span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -611,38 +626,39 @@
 </div>
 </div>
 <ul>
-<li class="fragment">Similar to the previous example, the <em>pipe</em> here is telling R “I want you to look in the penguins dataset and summarise the mean body mass of the sample, into a variable called ‘average body mass’.”</li>
+<li class="fragment">Tương tự như ví dụ trước, dấu <em>pipe</em> ở đây nói với R rằng “Tôi muốn bạn xem trong tập dữ liệu về chim cánh cụt và tóm tắt khối lượng cơ thể trung bình của mẫu, thành một biến gọi là ‘khối lượng cơ thể trung bình’.”</li>
 </ul>
 </section>
-<section id="take-a-break" class="slide level2">
-<h2>Take a Break</h2>
+<section id="giải-lao" class="slide level2">
+<h2>Giải lao</h2>
 
 <img data-src="tired-exhausted.gif" class="r-stretch"></section>
-<section id="the-analysis-process" class="slide level2">
-<h2>The Analysis Process</h2>
+<section id="quá-trình-phân-tích" class="slide level2">
+<h2>Quá trình phân tích</h2>
 <ul>
-<li class="fragment">R is great at generating data, but it is up to you to identify <strong>what</strong> data is most important to communicate</li>
-<li class="fragment">Make sure you <em>always</em> present some summary statistics</li>
-<li class="fragment">If you’re doing social science work, often this will be age range, percentage of females, percentage of ethnic groups, and so on.</li>
+<li class="fragment">R rất giỏi trong việc tạo dữ liệu, nhưng bạn phải xác định dữ liệu <strong>nào</strong> là quan trọng nhất để giao tiếp.</li>
+<li class="fragment">Đảm bảo rằng bạn <em>luôn</em> trình bày một vài thống kê tóm tắt</li>
+<li class="fragment">Nếu bạn đang làm công việc khoa học xã hội, thường đây sẽ là độ tuổi, tỷ lệ nữ giới, tỷ lệ dân tộc thiểu số, v.v.</li>
 </ul>
 </section>
-<section id="messy-data" class="slide level2">
-<h2>Messy Data</h2>
+<section id="dữ-liệu-lộn-xộn" class="slide level2">
+<h2>Dữ liệu lộn xộn</h2>
 <ul>
-<li class="fragment">Usually, data is <em>messy</em></li>
-<li class="fragment">Often it has NAs, or has been incorrectly entered, or is in the wrong format</li>
-<li class="fragment">I will go through each of these common occurrences, and how to deal with them</li>
+<li class="fragment">Dữ liệu thường <em>lộn xộn</em><br>
+</li>
+<li class="fragment">Thường thì nó có NA, hoặc đã được nhập sai, hoặc ở định dạng sai</li>
+<li class="fragment">Chị sẽ chỉ ra từng trường hợp phổ biến này và cách xử lí chúng</li>
 </ul>
 </section>
-<section id="nas" class="slide level2">
-<h2>NAs</h2>
+<section id="na" class="slide level2">
+<h2>NA</h2>
 <ul>
-<li class="fragment">“NAs” là gì?</li>
-<li class="fragment">“NAs” are when you have missing data OR incorrectly inputted data</li>
-<li class="fragment">For example, you could have the following dataset:</li>
+<li class="fragment">“NA” là gì?</li>
+<li class="fragment">“NA” là khi các em thiếu dữ liệu HOẶC nhập dữ liệu không chính xác</li>
+<li class="fragment">Ví dụ: các em có thể có tập dữ liệu sau:</li>
 </ul>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>ID <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">122</span>, <span class="dv">366</span>, <span class="dv">789</span>, <span class="cn">NA</span>, <span class="dv">1001</span>) <span class="co">#randomized ID numbers</span></span>
@@ -659,15 +675,15 @@
 </div>
 </div>
 <ul>
-<li class="fragment">What issues do you notice in this dataframe?</li>
-<li class="fragment">This dataframe has the issue of a NA within the <code>ID</code> variable, and an incorrectly inputted number in the <code>score</code> variable</li>
-<li class="fragment">Since we are focusing on the NAs, let’s address that first</li>
+<li class="fragment">Các em nhận thấy vấn đề gì trong khung dữ liệu này?</li>
+<li class="fragment">Khung dữ liệu này có vấn đề về NA trong biến <code>ID</code> và một số được nhập không chính xác trong biến <code>score</code></li>
+<li class="fragment">Vì chúng ta đang tập trung vào NA, trước tiên hãy giải quyết vấn đề đó</li>
 </ul>
 </section>
-<section id="section-5" class="slide level2 smaller">
+<section id="section-6" class="slide level2 smaller">
 <h2></h2>
 <ul>
-<li class="fragment">The simplest way to handle this issue is through the following command:</li>
+<li class="fragment">Cách đơn giản nhất để xử lý sự cố này là thông qua lệnh sau:</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">na.omit</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -680,18 +696,18 @@
 </div>
 </div>
 <ul>
-<li class="fragment">But, note that it removes an entire row from your dataset</li>
-<li class="fragment">This is acceptable if you have a large dataset, but sometimes you will want to retain the other information</li>
-<li class="fragment">For example, if you were reporting the average score of this dataset, you would want to keep the fourth row</li>
-<li class="fragment">Therefore, it is often good practice to assess the number of NAs you have nested within a variable, and remove them on a case-by-case basis</li>
+<li class="fragment">Tuy nhiên, lưu ý rằng nó xóa toàn bộ hàng khỏi tập dữ liệu</li>
+<li class="fragment">Điều này có thể chấp nhận được nếu các em có một tập dữ liệu lớn, nhưng đôi khi các em sẽ muốn giữ lại thông tin khác</li>
+<li class="fragment">Ví dụ: nếu em đang báo cáo điểm trung bình của tập dữ liệu này, em sẽ muốn giữ hàng thứ tư</li>
+<li class="fragment">Chính vì vậy, các em nên đánh giá số lượng NA mà các em đã lồng trong một biến và loại bỏ chúng theo từng trường hợp</li>
 </ul>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li class="fragment">In this example, if you were reporting average score, you would simply run the following:</li>
+<li class="fragment">Trong ví dụ này, nếu em đang báo cáo điểm trung bình, em chỉ cần chạy như sau:</li>
 </ul>
 </div><div class="column" style="width:60%;">
 <div class="cell">
@@ -703,27 +719,27 @@
 </div>
 </div>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <ul>
-<li class="fragment">Although, you can see that this results in a nonsense number- since we know we were only supposed to be measuring scores from 1 to 5!</li>
-<li class="fragment">Since we want to make sure we get the right result, let’s address the outlier we can see in our data- the “60” data point.</li>
+<li class="fragment">Nhưng, các em có thể thấy rằng điều này dẫn đến một con số vô nghĩa - vì chúng ta biết rằng chúng ta chỉ được cho là đo điểm từ 1 đến 5!</li>
+<li class="fragment">Vì chúng ta muốn đảm bảo rằng chúng ta nhận được kết quả phù hợp, hãy giải quyết ngoại lệ mà chúng ta có thể thấy trong dữ liệu của mình - điểm dữ liệu “60”.</li>
 </ul>
 </section>
-<section id="finding-outliers" class="slide level2">
-<h2>Finding Outliers</h2>
+<section id="tìm-kiếm-những-dữ-liệu-bất-thường" class="slide level2">
+<h2>Tìm kiếm những dữ liệu bất thường</h2>
 <ul>
-<li class="fragment">In this example, we can easily see that there’s an outlier</li>
-<li class="fragment">But what if we have a dataset with 1000s of datapoints?</li>
-<li class="fragment">The easiest way to handle this is in Excel, using the “Sort” function</li>
-<li class="fragment">When you identify outliers this way, you can remove them from the data easily by simply pressing “delete” and creating a null result</li>
-<li class="fragment">… Which R translates as “NA”</li>
+<li class="fragment">Trong ví dụ này, chúng ta có thể dễ dàng nhận thấy rằng có một dữ liệu bất thường</li>
+<li class="fragment">Nhưng điều gì sẽ xảy ra nếu chúng ta có một tập dữ liệu với 1000 điểm dữ liệu?</li>
+<li class="fragment">Cách dễ nhất để xử lý điều này là dùng Excel, sử dụng chức năng “Sort”</li>
+<li class="fragment">Khi em xác định các dữ liệu bất thường theo cách này, em có thể xóa chúng khỏi dữ liệu một cách dễ dàng bằng cách chỉ cần nhấn “xóa” và tạo kết quả rỗng</li>
+<li class="fragment">… Cái mà R dịch là “NA”</li>
 </ul>
 </section>
-<section id="handling-nas-within-a-function" class="slide level2">
-<h2>Handling NAs within a function</h2>
+<section id="xử-lý-na-trong-một-chức-năng" class="slide level2">
+<h2>Xử lý NA trong một chức năng</h2>
 <ul>
-<li class="fragment">For the moment, I will show you how to designate our “60” value as NA</li>
+<li class="fragment">Bây giờ, chị sẽ chỉ cho các em cách chỉ định giá trị “60” của chúng ta là NA</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>df<span class="sc">$</span>score[<span class="fu">which</span>(df<span class="sc">$</span>score <span class="sc">==</span> <span class="dv">60</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
@@ -738,11 +754,11 @@
 </div>
 </div>
 <ul>
-<li class="fragment">Now, we could do what we learned before, and run <code>na.omit</code> on the full dataset</li>
-<li class="fragment">Alternatively, we can tell R we want to omit NAs within the function itself</li>
+<li class="fragment">Bây giờ, chúng ta có thể làm những gì đã học trước đây và chạy <code>na.omit</code> trên tập dữ liệu đầy đủ</li>
+<li class="fragment">Ngoài ra, chúng ta có thể nói với R rằng chúng ta muốn bỏ qua các NA trong chính hàm</li>
 </ul>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -751,15 +767,15 @@
 </div>
 </div>
 <ul>
-<li class="fragment">The <code>na.rm</code> is shorthand for “NA remove”, and is a specific action you can ask R to do, within the function itself</li>
-<li class="fragment">Many functions in R have this capability, and as you can see, it helps you speed up the analysis process by combining two actions into one</li>
+<li class="fragment"><code>Na.rm</code> là viết tắt của “NA remove” và là một hành động cụ thể mà em có thể yêu cầu R thực hiện, trong chính hàm</li>
+<li class="fragment">Nhiều hàm trong R có khả năng này và như em có thể thấy, nó giúp em tăng tốc quá trình phân tích bằng cách kết hợp hai hành động thành một</li>
 </ul>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Consider this</p>
+<p>Xem xét cái này</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>df <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(df)</span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="fu">mean</span>(df<span class="sc">$</span>score)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -769,7 +785,7 @@
 </div>
 </div><div class="column" style="width:50%;">
 <div class="fragment">
-<p>Versus this…</p>
+<p>So với cái này …</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -780,12 +796,12 @@
 </div>
 </div>
 </section>
-<section id="lets-take-another-break" class="slide level2">
-<h2>Let’s take another break</h2>
+<section id="hãy-nghỉ-ngơi" class="slide level2">
+<h2>Hãy nghỉ ngơi</h2>
 
 <img data-src="tea-time-yoga.gif" class="r-stretch"></section>
-<section id="wide-versus-long-format" class="slide level2">
-<h2>Wide versus Long Format</h2>
+<section id="khổ-rộng-so-với-khổ-dài" class="slide level2">
+<h2>Khổ rộng so với khổ dài</h2>
 
 <img data-src="wide-long.png" class="r-stretch quarto-figure-center"><p class="caption"><em>From The Carpentries website</em></p></section>
 <section class="slide level2">
@@ -799,46 +815,46 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Generally, you’ll want your data to be in “long” format - this is what R prefers for running analyses such as linear models (which we’ll get to later).</p>
+<p>Nói chung, em sẽ muốn dữ liệu của mình ở định dạng “dài” - đây là những gì R thích để chạy các phân tích như mô hình tuyến tính (mà chúng ta sẽ đề cập sau).</p>
 </div>
 </div>
 </div>
 </section>
-<section id="what-do-you-do-when-data-is-in-the-wrong-format" class="slide level2">
-<h2>What do you do when data is in the wrong format?</h2>
+<section id="các-em-sẽ-làm-gì-khi-dữ-liệu-ở-định-dạng-sai" class="slide level2">
+<h2>Các em sẽ làm gì khi dữ liệu ở định dạng sai?</h2>
 <ul>
-<li class="fragment">There are two options:</li>
+<li class="fragment">Có hai lựa chọn:</li>
 </ul>
 <div class="fragment">
 <ol type="1">
-<li class="fragment">Make adjustments in Excel</li>
+<li class="fragment">Thực hiện điều chỉnh trong Excel</li>
 </ol>
 <div class="fragment">
-<p>… which can be laborious.</p>
+<p>… có thể tốn nhiều công sức.</p>
 </div>
 <ol start="2" type="1">
-<li class="fragment">Or, make adjustments in R using the tidyverse</li>
+<li class="fragment">Hoặc, thực hiện các điều chỉnh trong R bằng cách sử dụng <code>tidyverse</code></li>
 </ol>
 <div class="fragment">
-<p>… which is significantly quicker, once you understand how it works.</p>
+<p>… .. nhanh hơn đáng kể, chỉ khi em hiểu cách hoạt động của nó.</p>
 </div>
 </div>
 </section>
 <section class="slide level2">
 
 <div style="text-align: center">
-<p>I’ll show this in Excel now</p>
+<p>Chị sẽ hiển thị điều này trong Excel ngay bây giờ</p>
 </div>
 <div style="text-align: center">
 <div class="fragment">
-<p>.As you can see, this takes awahile, and can be ungainly with large datasets.</p>
+<p>Như bạn có thể thấy, điều này mất một lúc và có thể vô duyên với các bộ dữ liệu lớn.</p>
 </div>
 </div>
 </section>
-<section id="in-the-tidyverse" class="slide level2">
-<h2>In the <code>tidyverse</code></h2>
+<section id="trong-tidyverse" class="slide level2">
+<h2>Trong <code>tidyverse</code></h2>
 <ul>
-<li class="fragment">Two main functions:</li>
+<li class="fragment">Hai hàm chính:</li>
 </ul>
 <div class="fragment">
 <p><code>pivot_wider()</code></p>
@@ -851,8 +867,8 @@
 
 
 <img data-src="pivot-pic.png" class="r-stretch quarto-figure-center"><p class="caption"><em>From The Carpentries website</em></p></section>
-<section id="lets-try-this-with-the-dataset-we-used-in-excel" class="slide level2">
-<h2>Let’s try this with the dataset we used in Excel</h2>
+<section id="hãy-thử-điều-này-với-tập-dữ-liệu-chúng-ta-đã-sử-dụng-trong-excel" class="slide level2">
+<h2>Hãy thử điều này với tập dữ liệu chúng ta đã sử dụng trong Excel</h2>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">library</span>(readxl)</span>
@@ -860,7 +876,7 @@
 </div>
 </div>
 <div class="fragment">
-<p>Now we can do some pivot magic.</p>
+<p>Bây giờ chúng ta có thể xoay trục bảng dữ liệu.</p>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -877,7 +893,7 @@
 </div>
 </div>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -899,14 +915,14 @@
 </div>
 </div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <div style="text-align: center">
-<p>As you can see, there’s still some clean-up that needs to happen! What should we do next?</p>
+<p>Như em có thể thấy, vẫn còn một số hoạt động dọn dẹp cần phải thực hiện! Vậy chúng ta nên làm gì tiếp theo?</p>
 </div>
 <div style="text-align: center">
 <div class="fragment">
-<p>It looks like we can do the “quick and dirty” <code>na.omit</code>. Let’s do so now.</p>
+<p>Có vẻ như chúng ta có thể thực hiện hàm dọn dẹp nhanh chóng <code>na.omit</code>. Hãy làm như vậy ngay bây giờ.</p>
 </div>
 </div>
 <div class="fragment">
@@ -915,10 +931,10 @@
 </div>
 </div>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div style="text-align: center">
-<p>Which gives us this:</p>
+<p>Cái mà có thể mang lại cho chúng ta điều này:</p>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -949,18 +965,18 @@
 </div>
 <div style="text-align: center">
 <div class="fragment">
-<p>This already looks so much better! What do we need to do next?</p>
+<p>Nó đã trông tốt hơn rất nhiều! Chúng ta cần làm gì tiếp theo?</p>
 </div>
 </div>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div style="text-align: center">
-<p>We now need to clean up our gender variable.</p>
+<p>Bây giờ chúng ta cần phải dọn dẹp biến số giới của chúng ta.</p>
 </div>
 <div style="text-align: center">
 <div class="fragment">
-<p>To do this, we should remove all of the “0”s in the integer variable.</p>
+<p>Để làm điều này, chúng ta nên loại bỏ tất cả các “0” trong biến số nguyên.</p>
 </div>
 </div>
 <div class="fragment">
@@ -984,14 +1000,14 @@
 </div>
 </div>
 <div class="fragment">
-<p>Finally!</p>
+<p>Cuối cùng!</p>
 </div>
 </section>
 <section class="slide level2">
 
 <div style="text-align: center">
 <div class="fragment">
-<p>… although there’s one last thing we should do, to make sure our data is squeaky clean.</p>
+<p>… mặc dù còn một điều cuối cùng chúng ta nên làm là đảm bảo dữ liệu của chúng ta hoàn toàn sạch.</p>
 </div>
 </div>
 <div class="fragment">
@@ -1001,67 +1017,67 @@
 </div>
 <div style="text-align: center">
 <div class="fragment">
-<p>This command tells R that we want to <em>drop</em> the <code>integer</code> column. In this example, we don’t need it anymore, since our gender column is now what we want it to be.</p>
+<p>Lệnh này cho R biết rằng chúng ta muốn <em>xoá</em> cột <code>số nguyên</code>. Trong ví dụ này, chúng ta không cần nó nữa, vì cột giới tính bây giờ là những gì chúng ta muốn.</p>
 </div>
 </div>
 </section>
-<section id="thats-the-end-of-day-1" class="slide level2">
-<h2>That’s the end of Day 1!</h2>
+<section id="đó-là-kết-thúc-của-ngày-1" class="slide level2">
+<h2>Đó là kết thúc của Ngày 1!</h2>
 
 <img data-src="vaporwave.gif" class="r-stretch"></section>
-<section id="day-2" class="title-slide slide level1 center" style="text-align: center">
-<h1>Day 2</h1>
+<section id="ngày-2" class="title-slide slide level1 center" style="text-align: center">
+<h1>Ngày 2</h1>
 
 </section>
 
-<section id="welcome-1" class="slide level2 smaller">
-<h2>Welcome</h2>
+<section id="chào-mừng-1" class="slide level2 smaller">
+<h2>Chào mừng</h2>
 <div class="fragment">
-<p>This is <strong>Day 2</strong> of the R Refresher Workshop. Hopefully everyone is excited to begin again!</p>
+<p>Đây là <strong>Ngày 2</strong> của R Refresher Workshop. Hy vọng rằng mọi người hào hứng để bắt đầu lại!</p>
 </div>
 <div class="fragment">
-<p><strong>Day 2</strong> Outline:</p>
+<p><strong>Ngày 2</strong> nội dung chính:</p>
 </div>
 <ul>
-<li class="fragment">Confidence Intervals</li>
-<li class="fragment">Break <span class="emoji" data-emoji="clock9">🕘</span></li>
-<li class="fragment">Linear Regression</li>
-<li class="fragment">Another Break <span class="emoji" data-emoji="clock9">🕘</span></li>
-<li class="fragment">Interaction Terms in Linear Models</li>
-<li class="fragment">Practice Data Analysis</li>
+<li class="fragment"><p>Khoảng tin cậy</p></li>
+<li class="fragment"><p>Giải lao <span class="emoji" data-emoji="clock9">🕘</span></p></li>
+<li class="fragment"><p>Hồi quy tuyến tính</p></li>
+<li class="fragment"><p>Giải lao <span class="emoji" data-emoji="clock9">🕘</span></p></li>
+<li class="fragment"><p>Cụm tương tác trong mô hình tuyến tính</p></li>
+<li class="fragment"><p>Thực hành phân tích dữ liệu</p></li>
 </ul>
 </section>
-<section id="measuring-effect-size" class="slide level2">
-<h2>Measuring effect size</h2>
+<section id="đo-hệ-số-ảnh-hưởng" class="slide level2">
+<h2>Đo hệ số ảnh hưởng</h2>
 <ul>
-<li class="fragment">Often, we need to prove that we see an effect between groups</li>
-<li class="fragment">This is because even though means may differ, the <em>variance</em> within the data may overlap</li>
-<li class="fragment">For example:</li>
+<li class="fragment"><p>Thường, chúng ta cần chứng minh rằng chúng ta thấy ảnh hưởng giữa các nhóm</p></li>
+<li class="fragment"><p>Điều này là do mặc dù các giá trị trung bình có thể khác nhau, nhưng <em>phương sai</em> trong dữ liệu có thể trùng lặp</p></li>
+<li class="fragment"><p>Ví dụ:</p></li>
 </ul>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 
 <img data-src="ci-uct-vietnam.png" class="r-stretch"></section>
-<section id="confidence-intervals" class="slide level2">
-<h2>Confidence intervals</h2>
+<section id="khoảng-tin-cậy" class="slide level2">
+<h2>Khoảng tin cậy</h2>
 <ul>
-<li class="fragment">Confidence intervals are one of the most robust methods we can use to assess effect size.</li>
-<li class="fragment">They perform calculations to <em>measure the spread of data around a mean</em>.</li>
-<li class="fragment">Confidence intervals show us all possible means we might see, with the data we have.</li>
-<li class="fragment">If these means overlap between groups, then that means we must reject the presence of an effect.</li>
+<li class="fragment"><p>Khoảng tin cậy là một trong những phương pháp mạnh mẽ nhất mà chúng ta có thể sử dụng để đánh giá hệ số ảnh hưởng.</p></li>
+<li class="fragment"><p>Họ thực hiện các phép tính để <em>đo lường mức độ lan truyền của dữ liệu xung quanh một giá trị trung bình </em>.</p></li>
+<li class="fragment"><p>Khoảng tin cậy cho chúng ta thấy tất cả giá trị trung bình có thể mà chúng ta có thể thấy, với dữ liệu chúng ta có.</p></li>
+<li class="fragment"><p>Nếu những giá trị trung bình này bị chồng chéo giữa các nhóm, thì điều đó có nghĩa là chúng ta phải từ chối sự hiện diện của một ảnh hưởng.</p></li>
 </ul>
 </section>
-<section id="confidence-intervals-and-penguins" class="slide level2">
-<h2>Confidence intervals and penguins</h2>
+<section id="khoảng-tin-cậy-và-chim-cánh-cụt" class="slide level2">
+<h2>Khoảng tin cậy và chim cánh cụt</h2>
 <div class="fragment">
 <p><img data-src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png"></p>
 </div>
 </section>
-<section id="confidence-intervals-and-penguins-1" class="slide level2">
-<h2>Confidence intervals and penguins</h2>
+<section id="khoảng-tin-cậy-và-chim-cánh-cụt-1" class="slide level2">
+<h2>Khoảng tin cậy và chim cánh cụt</h2>
 <ul>
-<li class="fragment">First, let’s load our penguins data back into R Studio</li>
+<li class="fragment">Đầu tiên, hãy tải lại dữ liệu về chim cánh cụt của chúng ta vào R Studio</li>
 </ul>
 <div class="fragment">
 <div class="cell">
@@ -1070,10 +1086,10 @@
 </div>
 </div>
 <ul>
-<li class="fragment">Hopefully you remember what we should do next!</li>
+<li class="fragment">Hy vọng rằng các em nhớ những gì chúng ta nên làm tiếp theo!</li>
 </ul>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">head</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1091,7 +1107,7 @@
 </div>
 </div>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">str</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1108,15 +1124,18 @@
 </div>
 </div>
 </section>
-<section id="bill-length" class="slide level2">
-<h2>Bill length</h2>
+<section id="section-18" class="slide level2">
+<h2></h2>
+</section>
+<section id="chiều-dài-mỏ" class="slide level2">
+<h2>Chiều dài mỏ</h2>
 <ul>
-<li class="fragment">It looks like we could explore bill length between the three species of penguin, to understand whether there is a significant (“real”) difference between bill lengths</li>
-<li class="fragment">Something quick we can do is a boxplot to visualize the three different sets of data</li>
-<li class="fragment">I’ll show you how here:</li>
+<li class="fragment"><p>Có vẻ như chúng ta có thế khám phá chiều dài mỏ giữa ba loài chim cánh cụt, để hiểu rằng có sự khác biệt lớn giữa chiều dài mỏ của chúng hay không</p></li>
+<li class="fragment"><p>Điều nhanh chóng chúng có thể làm là một biểu đồ hộp để trực quan hoá ba bảng dữ liệu khác nhau</p></li>
+<li class="fragment"><p>Chị sẽ chỉ các em cách làm:</p></li>
 </ul>
 </section>
-<section id="section-17" class="slide level2 smaller">
+<section id="section-19" class="slide level2 smaller">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -1129,25 +1148,25 @@
 <span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">outlier.size =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="2022_r-refresher-workshop_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
-<section id="boxplot-interpretation" class="slide level2">
-<h2>Boxplot interpretation</h2>
+<img data-src="2022_r-refresher-workshop-viet_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
+<section id="hiểu-biểu-đồ-hộp" class="slide level2">
+<h2>Hiểu biểu đồ hộp</h2>
 <ul>
-<li class="fragment">We can see that all three species appear to overlap</li>
-<li class="fragment">This means that there is no significant difference in bill length between the three species, based on the data we have</li>
-<li class="fragment">… but let’s back that up with calculations, too</li>
+<li class="fragment"><p>Chúng ta có thế thấy cả ba loại xuất hiện chồng chéo</p></li>
+<li class="fragment"><p>Điều này có nghĩa là không có sự khác biệt đáng kể vế chiều dài mỏ giữa ba loài chim cánh cụt, dựa trên dữ liệu chúng ta có</p></li>
+<li class="fragment"><p>… nhưng hãy dự phòng điều này bằng các phép tính</p></li>
 </ul>
 </section>
-<section id="calculating-confidence-intervals-in-r" class="slide level2">
-<h2>Calculating confidence intervals in R</h2>
+<section id="tính-khoảng-tin-cậy-trong-r" class="slide level2">
+<h2>Tính khoảng tin cậy trong R</h2>
 <ul>
-<li class="fragment">Install the <code>gmodels</code> package</li>
-<li class="fragment">We will use the <code>ci</code> function in gmodels to calculate the confidence intervals we need</li>
-<li class="fragment">To use it, we will need to create data subsets, by species</li>
-<li class="fragment">We’ll use the <code>tidyverse</code> to do this</li>
+<li class="fragment"><p>Cài đặt gói <code>gmodels</code></p></li>
+<li class="fragment"><p>Chúng ta sẽ sử dụng hàm <code>ci</code> trong <code>gmodels</code> để tính toán khoảng tin cậy mà chúng ta cần</p></li>
+<li class="fragment"><p>Để sử dụng nó, chúng ta sẽ cần tạo các tập dữ liệu con, theo loài</p></li>
+<li class="fragment"><p>Chúng ta sẽ sử dụng <code>tidyverse</code> để làm điều này</p></li>
 </ul>
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-20" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -1165,8 +1184,8 @@
 <span id="cb37-8"><a href="#cb37-8"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Chinstrap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="now-to-do-the-confidence-intervals" class="slide level2">
-<h2>Now to do the confidence intervals</h2>
+<section id="bây-giờ-để-thực-hiện-khoảng-tin-cậy" class="slide level2">
+<h2>Bây giờ để thực hiện khoảng tin cậy</h2>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>gmodels<span class="sc">::</span><span class="fu">ci</span>(adelie<span class="sc">$</span>bill_length_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1180,11 +1199,11 @@
 <p><img data-src="scared-cat.gif"></p>
 </div>
 </section>
-<section id="section-19" class="slide level2">
+<section id="section-21" class="slide level2">
 <h2></h2>
 <ul>
-<li class="fragment">That wasn’t what we wanted! What do we think the problem is?</li>
-<li class="fragment">Dúng rồi. We need to remove the NAs in our data.</li>
+<li class="fragment"><p>Đó không phải là những gì chúng ta muốn! Các em nghĩ vấn đề là gì?</p></li>
+<li class="fragment"><p>Đúng rồi. Chúng ta cần xóa NA trong dữ liệu của mình.</p></li>
 </ul>
 <div class="fragment">
 <div class="cell">
@@ -1196,11 +1215,11 @@
 </div>
 </div>
 <ul>
-<li class="fragment">That’s better!</li>
-<li class="fragment">Now, let’s do the same for our two other species. Go ahead and try now.</li>
+<li class="fragment"><p>Tốt hơn rồi đó!</p></li>
+<li class="fragment"><p>Bây giờ, chúng ta hãy làm tương tự cho hai loài còn lại. Hãy tiếp tục và thử ngay bây giờ</p></li>
 </ul>
 </section>
-<section id="section-20" class="slide level2">
+<section id="section-22" class="slide level2">
 <h2></h2>
 <div class="fragment">
 <div class="cell">
@@ -1217,8 +1236,8 @@
 </div>
 </div>
 </section>
-<section id="bringing-it-all-together" class="slide level2">
-<h2>Bringing it all together</h2>
+<section id="mang-tất-cả-lại-với-nhau" class="slide level2">
+<h2>Mang tất cả lại với nhau</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="fragment">
@@ -1243,23 +1262,23 @@
 </div>
 </div>
 <ul>
-<li class="fragment">We can see that contrary to our boxplot, there is no overlap between Adelie penguins’ bill length, and the other two species</li>
-<li class="fragment">And there is only a slight overlap between Gentoos and Chinstraps</li>
+<li class="fragment"><p>Chúng ta có thế thấy rằng trái lại với biểu đồ hộp, không có sự chồng chéo giữa chiều dài mỏ của chim cánh cụt Adelie và hai loài còn lại</p></li>
+<li class="fragment"><p>Và chỉ có một sự trùng lặp nhỏ giữa Gentoos và Chinstraps</p></li>
 </ul>
 </section>
-<section id="section-21" class="slide level2">
+<section id="section-23" class="slide level2">
 <h2></h2>
 <ul>
-<li class="fragment">However, a good scientist always checks their work</li>
-<li class="fragment">This is so different from our visualized boxplot, that it’s worth assessing more</li>
-<li class="fragment">We can do this by seeing how many NAs we removed</li>
-<li class="fragment">If we removed a lot, then we can infer that perhaps the data became skewed, and/or the sample size was simply too small to make good inferences</li>
+<li class="fragment"><p>Tuy nhiên, một nhà khoa học giỏi luôn kiểm tra công việc của họ</p></li>
+<li class="fragment"><p>Điều này rất khác với biểu đồ hộp của chúng ta, nên nó đáng để đánh giá nhiều hơn</p></li>
+<li class="fragment"><p>Chúng ta có thể làm điều này bằng cách xem chúng ta đã loại bỏ bao nhiêu NA</p></li>
+<li class="fragment"><p>Nếu chúng ta loại bỏ nhiều, thì chúng ta có thể suy ra rằng có lẽ dữ liệu đã bị lệch và / hoặc kích thước mẫu đơn giản là quá nhỏ để có thể đưa ra những suy luận tốt</p></li>
 </ul>
 </section>
-<section id="section-22" class="slide level2">
+<section id="section-24" class="slide level2">
 <h2></h2>
 <ul>
-<li class="fragment">Here is how to do that:</li>
+<li class="fragment">Đây là cách để làm điều đó:</li>
 </ul>
 <div class="fragment">
 <div class="cell">
@@ -1278,38 +1297,38 @@
 </div>
 </div>
 <ul>
-<li class="fragment">This actually looks pretty good!</li>
-<li class="fragment">And if we look at our Environment, we can see that the sample sizes were fairly robust, too.</li>
+<li class="fragment"><p>Điều này thực sự trông khá tốt!</p></li>
+<li class="fragment"><p>Và nếu chúng ta nhìn vào Environment của mình, chúng ta có thể thấy rằng các kích thước mẫu cũng khá mạnh mẽ.</p></li>
 </ul>
 </section>
-<section id="final-notes" class="slide level2">
-<h2>Final notes</h2>
+<section id="ghi-chú-cuối-cùng" class="slide level2">
+<h2>Ghi chú cuối cùng</h2>
 <ul>
-<li class="fragment">We saw the boxplot, but we also saw that the boxplot wasn’t totally accurate in showing the actual effect</li>
-<li class="fragment">That’s because the <code>boxplot</code> command in ggplot calculates confidence intervals <em>differently</em></li>
-<li class="fragment">So, you shouldn’t rely on the visualization</li>
-<li class="fragment">Always calculate confidence intervals out in R, and report those</li>
+<li class="fragment"><p>Chúng ta đã thấy biểu đồ hộp, nhưng chúng ta cũng thấy rằng biểu đồ hộp không hoàn toàn chính xác trong việc hiển thị ảnh hưởng thực tế</p></li>
+<li class="fragment"><p>Đó là bởi vì lệnh <code>boxplot</code> trong ggplot tính toán khoảng tin cậy <em>khác nhau</em></p></li>
+<li class="fragment"><p>Nên, em không nên dựa vào hình ảnh để hiểu các hiệu ứng</p></li>
+<li class="fragment"><p>Luôn tính toán các khoảng tin cậy trong R và báo cáo chúng</p></li>
 </ul>
 </section>
-<section id="breaktime" class="slide level2">
-<h2>Breaktime!</h2>
+<section id="giải-lao-1" class="slide level2">
+<h2>Giải lao</h2>
 
 <img data-src="vapor-break.gif" class="r-stretch"></section>
-<section id="linear-regression" class="slide level2">
-<h2>Linear Regression</h2>
+<section id="hồi-quy-tuyến-tính" class="slide level2">
+<h2>Hồi quy tuyến tính</h2>
 <ul>
-<li class="fragment">A fundamental concept in statistics</li>
-<li class="fragment">A core function that predicts <em>correlation</em> between different variables</li>
-<li class="fragment">Correlation là gì?</li>
-<li class="fragment">“Any statistical relationship, whether causal or not, between two random variables”</li>
-<li class="fragment">Often in science, we DO want to understand causation as well, i.e.&nbsp;whether one thing directly affected another thing</li>
+<li class="fragment"><p>Một khái niệm cơ bản trong thống kê</p></li>
+<li class="fragment"><p>Một hàm cốt lõi mà dự đoán <em>tương quan</em> giữa các biến khác nhau</p></li>
+<li class="fragment"><p>Correlation là gì?</p></li>
+<li class="fragment"><p>“Bất kỳ mối quan hệ thống kê nào, dù là quan hệ nhân quả hay không, giữa hai biến ngẫu nhiên”</p></li>
+<li class="fragment"><p>Thinh thường trong khoa học, chúng ta cũng muốn hiểu quan hệ nhân quả, tức là liệu một thứ có ảnh hưởng trực tiếp đến một thứ khác hay không</p></li>
 </ul>
 </section>
-<section id="section-23" class="slide level2">
+<section id="section-25" class="slide level2">
 <h2></h2>
 <ul>
-<li class="fragment">For example, we may want to measure whether an education campaign against bear farming <em>caused</em> bear farmers to stop farming bears</li>
-<li class="fragment">Proving causation is hard to do for many scientists, so correlation is used as a proxy</li>
+<li class="fragment"><p>Ví dụ: chúng ta có thể muốn đo lường xem một chiến dịch giáo dục chống lại việc nuôi gấu <em>có khiến</em> người nuôi gấu ngừng nuôi gấu hay không</p></li>
+<li class="fragment"><p>Việc chứng minh quan hệ nhân quả là điều khó thực hiện đối với nhiều nhà khoa học, vì vậy mối tương quan được sử dụng như một thay thế</p></li>
 </ul>
 <div class="fragment">
 <div class="callout callout-warning callout-captioned callout-style-default">
@@ -1321,30 +1340,30 @@
 <p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p>Correlation and causation are not the same. Be careful when writing your results!</p>
+<p>Tương quan và nhân quả không giống nhau. Hãy cẩn thận khi viết kết quả của em!</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="linear-regression-1" class="slide level2">
-<h2>Linear regression</h2>
+<section id="hồi-quy-tuyến-tính-1" class="slide level2">
+<h2>Hồi quy tuyến tính</h2>
 <ul>
-<li class="fragment">For now, let’s focus on linear regression</li>
-<li class="fragment">Linear regression is also known as “linear models”, or sometimes “logistic regression”</li>
-<li class="fragment">The names vary depending on the calculations being performed</li>
-<li class="fragment">It is a very easy command to do in R, and easy to understand</li>
-<li class="fragment">For example, let’s say that rather than use confidence intervals, we wanted to use linear regression to explore the <em>relationship</em> between <code>species</code> and <code>bill_length_mm</code></li>
+<li class="fragment"><p>Bây giờ, hãy tập trung vào hồi quy tuyến tính</p></li>
+<li class="fragment"><p>Hồi quy tuyến tính còn được gọi là “mô hình tuyến tính”, hoặc đôi khi là “hồi quy logistic”</p></li>
+<li class="fragment"><p>Các tên khác nhau tùy thuộc vào các phép tính đang được thực hiện</p></li>
+<li class="fragment"><p>Đây là một lệnh rất dễ thực hiện trong R và dễ hiểu</p></li>
+<li class="fragment"><p>Ví dụ: giả sử thay vì sử dụng khoảng tin cậy, chúng ta muốn sử dụng hồi quy tuyến tính để khám phá <em>mối quan hệ</em> giữa <code>species</code> và <code>bill_length_mm</code></p></li>
 </ul>
 </section>
-<section id="refresher-on-variables" class="slide level2">
-<h2>Refresher on Variables</h2>
+<section id="nhớ-lại-các-biến" class="slide level2">
+<h2>Nhớ lại các biến</h2>
 <ul>
-<li class="fragment"><strong>Dependent variable</strong>: Our variable of interest. It’s called “dependent” because we are investigating whether it <em>depends</em> on certain attributes within our independent variable(s)</li>
-<li class="fragment"><strong>Independent variable</strong>: “Static” variables that we think <em>may</em> influence the dependent variable.</li>
+<li class="fragment"><p><em>Biến phụ thuộc</em>: Biến mà chúng ta đang xem xét. Nó được gọi là “phụ thuộc” vì chúng ta đang nghiên cứu xem nó có <em>phụ thuộc</em> vào các thuộc tính nhất định trong (các) biến độc lập của chúng ta hay không</p></li>
+<li class="fragment"><p><strong>Biến độc lập </strong>: Các biến “tĩnh” mà chúng ta nghĩ <em>có thể</em> ảnh hưởng đến biến phụ thuộc.</p></li>
 </ul>
 </section>
-<section id="section-24" class="slide level2 smaller">
+<section id="section-26" class="slide level2 smaller">
 <h2></h2>
 <div class="fragment">
 <div class="cell">
@@ -1352,52 +1371,53 @@
 </div>
 </div>
 <ul>
-<li class="fragment">You can see that in our linear model, our <em>dependent</em> variable is written first, followed by our <em>independent variable</em></li>
-<li class="fragment">This notation follows how we would say this in words: “We are investigating whether bill length depends on species, in these three species of penguins.”</li>
-<li class="fragment">Once it’s in your Environment, run <code>summary(m1)</code>.</li>
-<li class="fragment">You should see this output:</li>
+<li class="fragment"><p>Em có thể thấy rằng trong mô hình tuyến tính của chúng ta, <em>biến phụ thuộc</em> được viết đầu tiên, tiếp theo là <em>biến độc lập</em></p></li>
+<li class="fragment"><p>Kí hiệu này theo cách chúng ta sẽ nói bằng chữ: “Chúng ta đang nghiên cứu liệu chiều dài mỏ có phụ thuộc vào loài hay không, ở ba loài chim cánh cụt này.”</p></li>
+<li class="fragment"><p>Khi nó ở trong Environment của em, hãy sử dụng <code>summary(m1)</code></p></li>
+<li class="fragment"><p>Em sẽ thấy kết quả này:</p></li>
 </ul>
 <div class="fragment">
 <div id="fig-lm" class="quarto-figure quarto-figure-center">
 <figure>
 <iframe width="600" height="400" src="lm-output.png">
 </iframe>
-<p></p><figcaption>Figure 1: <em>Summary output</em></figcaption><p></p>
+<p></p><figcaption>Figure&nbsp;1: <em>Kết quả tóm tắt</em></figcaption><p></p>
 </figure>
 </div>
 </div>
 </section>
-<section id="section-25" class="slide level2">
+<section id="section-27" class="slide level2">
 <h2></h2>
 <ul>
-<li class="fragment">This output is showing us that <strong>there is a relationship between species and bill length</strong></li>
-<li class="fragment">Put another way: “Bill length is <em>correlated</em> with species”</li>
+<li class="fragment"><p>Kết quả này cho chúng ta thấy rằng <strong>có một mối quan hệ giữ loài và chiều dài mỏ</strong></p></li>
+<li class="fragment"><p>Nói cách khác: “Chiều dài mỏ <em>tương quan</em> đến loài.”</p></li>
 </ul>
 </section>
-<section id="linear-regression-a-powerful-and-adaptable-tool" class="slide level2">
-<h2>Linear Regression: A Powerful and Adaptable Tool</h2>
+<section id="hồi-quy-tuyến-tính-một-công-cụ-mạnh-mẽ-và-có-thể-thích-ứng" class="slide level2">
+<h2>Hồi quy tuyến tính: Một công cụ mạnh mẽ và có thể thích ứng</h2>
 <ul>
-<li class="fragment">Linear models can be built to investigate nearly any question you may have</li>
-<li class="fragment">Go ahead and try to build some more linear models in the penguins dataset, with ONE dependent variable, and ONE independent variable.</li>
+<li class="fragment"><p>Mô hình tuyến tính có thể được xây dựng để nghiên cứu gần như bất kỳ câu hỏi nào em có thể có</p></li>
+<li class="fragment"><p>Hãy tiếp tục và cố gắng xây dựng nhiều mô hình tuyến tính hơn trong tập dữ liệu chim cánh cụt, với MỘT biến phụ thuộc và MỘT biến độc lập.</p></li>
 </ul>
 </section>
-<section id="another-break" class="slide level2">
-<h2>Another break</h2>
+<section id="nghỉ-ngơi" class="slide level2">
+<h2>Nghỉ ngơi</h2>
 
 <img data-src="tea-time.gif" class="r-stretch"></section>
-<section id="interaction-terms-in-linear-models" class="slide level2">
-<h2>Interaction Terms in Linear Models</h2>
+<section id="cụm-tương-tác-trong-mô-hình-tuyến-tính" class="slide level2">
+<h2>Cụm tương tác trong mô hình tuyến tính</h2>
 <ul>
-<li class="fragment">Hopefully you all feel confident with a simple <code>lm(y ~x)</code> model</li>
-<li class="fragment">Now, we’ll talk about how to handle multiple independent variables</li>
-<li class="fragment">In linear models in R, you have to specify the <em>type</em> of interaction you are exploring</li>
-<li class="fragment">I will show you two examples</li>
+<li class="fragment"><p>Hy vọng rằng tất cả các em cảm thấy tự tin với mô hình <code>lm (y ~ x)</code> đơn giản</p></li>
+<li class="fragment"><p>Bây giờ, chúng ta sẽ nói về cách xử lý nhiều biến độc lập</p></li>
+<li class="fragment"><p>Thỉnh thoảng, chúng ta mong đợi rằng một vài biến độc lập sẽ tương tác với nhau, như là <em>chiều cao</em> và <em>cân nặng</em></p></li>
+<li class="fragment"><p>Trong mô hình tuyến tính trong R, em phải chỉ định <em>loại</em> tương tác mà em đang khám phá</p></li>
+<li class="fragment"><p>Chị sẽ chỉ cho em hai ví dụ</p></li>
 </ul>
 </section>
-<section id="no-expected-relationship-between-variables" class="slide level2">
-<h2>No expected relationship between variables</h2>
+<section id="không-có-mối-quan-hệ-mong-đợi-giữa-các-biến" class="slide level2">
+<h2>Không có mối quan hệ mong đợi giữa các biến</h2>
 <ul>
-<li class="fragment">If we expect independent variables to be independent of one another, we treat them separately in the model:</li>
+<li class="fragment">Nếu chúng ta mong đợi các biến độc lập độc lập với nhau, chúng ta xử lý chúng riêng biệt trong mô hình:</li>
 </ul>
 <div class="fragment fade-out">
 <div class="cell">
@@ -1409,15 +1429,15 @@
 <figure>
 <iframe width="600" height="300" src="lm-out-ex-2.png">
 </iframe>
-<p></p><figcaption>Figure 2: <em>Summary output</em></figcaption><p></p>
+<p></p><figcaption>Figure&nbsp;2: <em>Kết quả tóm tắt</em></figcaption><p></p>
 </figure>
 </div>
 </div>
 </section>
-<section id="expected-interaction-between-independent-variables" class="slide level2">
-<h2>Expected interaction between independent variables</h2>
+<section id="tương-tác-mong-đợi-giữa-các-biến-độc-lập" class="slide level2">
+<h2>Tương tác mong đợi giữa các biến độc lập</h2>
 <ul>
-<li class="fragment">Sometimes, we do expect for an interaction to be present between independent variables</li>
+<li class="fragment">Đôi khi, chúng ta mong đợi có sự tương tác giữa các biến độc lập</li>
 </ul>
 <div class="fragment">
 <div class="cell">
@@ -1425,38 +1445,38 @@
 </div>
 </div>
 </section>
-<section id="section-26" class="slide level2">
+<section id="section-28" class="slide level2">
 <h2></h2>
 
 <img data-src="lmoutexthree.png" class="r-stretch"></section>
-<section id="practice-data-analysis" class="slide level2">
-<h2>Practice Data Analysis</h2>
+<section id="thực-hành-phân-tích-dữ-liệu" class="slide level2">
+<h2>Thực hành phân tích dữ liệu</h2>
 <ul>
-<li class="fragment">Now, I want you all to practice on a dataset.</li>
-<li class="fragment">You can choose from several pre-loaded datasets:</li>
-<li class="fragment"><code>starwars</code></li>
-<li class="fragment"><code>storms</code></li>
-<li class="fragment"><code>mtcars</code></li>
-<li class="fragment"><code>diamonds</code></li>
+<li class="fragment"><p>Bây giờ, chị muốn tất cả các em thực hành trên một tập dữ liệu.</p></li>
+<li class="fragment"><p>Em có thể chọn từ một số bộ dữ liệu được tải trước:</p></li>
+<li class="fragment"><p><code>starwars</code></p></li>
+<li class="fragment"><p><code>storms</code></p></li>
+<li class="fragment"><p><code>mtcars</code></p></li>
+<li class="fragment"><p><code>diamonds</code></p></li>
 </ul>
 </section>
-<section id="the-data-analysis-process" class="slide level2">
-<h2>The Data Analysis Process</h2>
+<section id="quy-trình-phân-tích-dữ-liệu" class="slide level2">
+<h2>Quy trình phân tích dữ liệu</h2>
 <ol type="1">
-<li class="fragment">Understand your dataset</li>
-<li class="fragment">Calculate summary statistics</li>
-<li class="fragment">Calculate confidence intervals OR linear regression</li>
-<li class="fragment">Write your results</li>
-<li class="fragment">Make a presentation (one or two slides) about your findings</li>
-<li class="fragment"><em>BONUS</em>: Make graphs using <code>ggplot2</code></li>
+<li class="fragment"><p>Hiểu tập dữ liệu</p></li>
+<li class="fragment"><p>Tính toán thống kê tóm tắt</p></li>
+<li class="fragment"><p>Tính khoảng tin cậy HOẶC hồi quy tuyến tính</p></li>
+<li class="fragment"><p>Viết kết quả của em</p></li>
+<li class="fragment"><p>Tạo bản trình bày (một hoặc hai trang trình bày) về những phát hiện của em</p></li>
+<li class="fragment"><p><em>THÊM</em>: Tạo đồ thị bằng cách sử dụng <code>ggplot2</code></p></li>
 </ol>
 <div style="text-align: center">
 <div class="fragment">
-<p><span class="emoji" data-emoji="sparkles">✨</span> You can do this as a group! <span class="emoji" data-emoji="raised_hands">🙌</span></p>
+<p><span class="emoji" data-emoji="sparkles">✨</span> Em có thể làm điều này theo nhóm! <span class="emoji" data-emoji="raised_hands">🙌</span></p>
 </div>
 </div>
 </section>
-<section id="section-27" class="slide level2">
+<section id="section-29" class="slide level2">
 <h2></h2>
 
 <img src="SDZWA_Seal_CMYK.jpg" class="slide-logo r-stretch"><div class="footer footer-default">
@@ -1467,19 +1487,19 @@
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="2022_r-refresher-workshop_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="2022_r-refresher-workshop-viet_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="2022_r-refresher-workshop_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="2022_r-refresher-workshop_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="2022_r-refresher-workshop_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="2022_r-refresher-workshop_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="2022_r-refresher-workshop_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="2022_r-refresher-workshop_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="2022_r-refresher-workshop_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="2022_r-refresher-workshop_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="2022_r-refresher-workshop_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="2022_r-refresher-workshop-viet_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -1784,7 +1804,8 @@
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
